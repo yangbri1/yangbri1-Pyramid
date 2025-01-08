@@ -28,6 +28,21 @@ public class Pyramid {
      * @return a string representation of the pyramid.
      */
     public String returnPyramid(int n){
-        return "";
+        String emptyStr = "";
+
+        int rowNum = 0;
+        while(rowNum < n){
+            int wildcard = rowNum + 1;
+            while(wildcard < n + 1){
+                // System.out.print('*');
+                emptyStr += "*";
+                ++wildcard;
+            }
+            // System.out.println();
+            emptyStr += "\n";
+            ++rowNum;
+        }
+
+        return emptyStr;
     }
 }
