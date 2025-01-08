@@ -28,16 +28,21 @@ public class Pyramid {
      * @return a string representation of the pyramid.
      */
     public String returnPyramid(int n){
+        // declare empty String to concatenate * to & later return
         String emptyStr = "";
 
+        // iterator for outer flow control while loop (each row)
         int rowNum = 0;
+        // iterate to create each row
         while(rowNum < n){
-            int wildcard = rowNum + 1;
-            while(wildcard < n + 1){
-                // System.out.print('*');
-                emptyStr += "*";
-                ++wildcard;
-            }
+            // iterator for each row elem
+            // int wildcard = n - 1;
+            // while(wildcard < n){
+            //     // System.out.print('*');
+            //     emptyStr += "*";
+            //     ++wildcard;
+            // }
+            emptyStr += ('*' * 5);
             // System.out.println();
             emptyStr += "\n";
             ++rowNum;
