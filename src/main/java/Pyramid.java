@@ -33,18 +33,23 @@ public class Pyramid {
 
         // iterator for outer flow control while loop (each row)
         int rowNum = 0;
-        // iterate to create each row
-        while(rowNum < n){
+        // iterate to create each row -- upperbound set to (n+1) to account for last row -- otw DN hit
+        while(rowNum < n + 1){
             // iterator for each row elem
-            // int wildcard = n - 1;
-            // while(wildcard < n){
-            //     // System.out.print('*');
-            //     emptyStr += "*";
-            //     ++wildcard;
-            // }
-            emptyStr += ('*' * 5);
+            int wildcard = 0;
+            // this condition so each row only contains asterisk equal to 'rowNum'
+            while(wildcard < rowNum){
+                // System.out.print('*');
+                // use addition assignment operator '+=' to recursively add on wildcard/asterisks to empty String
+                emptyStr += "*";
+                // increment to continue loop
+                ++wildcard;
+            }
+            
             // System.out.println();
+            // append newline '\n' character for line break onto next row
             emptyStr += "\n";
+            // increment by 1to move to next row
             ++rowNum;
         }
 
